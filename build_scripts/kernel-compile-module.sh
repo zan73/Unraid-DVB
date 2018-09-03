@@ -39,17 +39,6 @@ mv -f  /tmp/firmware /lib
   done
   make oldconfig
 
-##Make menuconfig
-cd $D
-wget https://mirror.linuxserver.io/unraid-dvb/$VERSION/stock/.config
-cd $D/kernel
-if [ -e $D/.config ]; then
-   rm -f .config
-   rsync $D/.config $D/kernel/.config
-else
-   make menuconfig
-fi
-
 ##Compile Kernel
 cd $D/kernel
 make -j $(grep -c ^processor /proc/cpuinfo)
