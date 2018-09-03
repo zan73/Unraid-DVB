@@ -28,7 +28,7 @@ wget https://download.nvidia.com/XFree86/nvidia-settings/nvidia-settings-$NVIDIA
 wget https://download.nvidia.com/XFree86/nvidia-xconfig/nvidia-xconfig-$NVIDIA.tar.bz2
 
 ##Get Nvidia Slackbuild
-https://slackbuilds.org/slackbuilds/14.2/system/nvidia-driver.tar.gz
+wget https://slackbuilds.org/slackbuilds/14.2/system/nvidia-driver.tar.gz
 
 #Create /lib/firmware/unraid-media to identify type of build
 #echo base=\"Nvidia\" > /lib/firmware/unraid-media
