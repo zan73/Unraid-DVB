@@ -36,6 +36,48 @@ python \
 readline \
 sqlite \
 squashfs-tools \
+atk \
+cairo \
+cairomm \
+dbus \
+fontconfig \
+freetype \
+fribidi \
+glib2 \
+gdk-pixbuf2 \
+gtk+2 \
+gtk+3 \
+harfbuzz \
+libdrm \
+libpciaccess \
+libpng \
+libpthread-stubs \
+libvdpau \
+libxcb \
+libxshmfence \
+libX11 \
+libX11-xcb \
+libXau \
+libXdamage \
+libXdmcp \
+libXext \
+libXfixes \
+libXrandr \
+libXrender \
+libXv \
+libXvMC \
+libXxf86vm \
+mesa \
+opencl-headers \
+pango \
+pangomm \
+pcre \
+pcre2 \
+pixman \
+xorgproto \
+xcb-proto \
+xrandr \
+zlib 
 )
 
 # current RocketRaid Release - See http://www.highpoint-tech.com/BIOS_Driver/R750/Linux/
