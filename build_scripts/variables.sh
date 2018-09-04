@@ -40,6 +40,7 @@ atk \
 cairo \
 cairomm \
 dbus \
+expat \
 fontconfig \
 freetype \
 fribidi \
@@ -47,6 +48,8 @@ glib2 \
 gdk-pixbuf2 \
 gtk+2 \
 gtk+3 \
+gtkmm2 \
+gtkmm3 \
 harfbuzz \
 libdrm \
 libpciaccess \
@@ -56,7 +59,6 @@ libvdpau \
 libxcb \
 libxshmfence \
 libX11 \
-libX11-xcb \
 libXau \
 libXdamage \
 libXdmcp \
@@ -77,7 +79,7 @@ pixman \
 xorgproto \
 xcb-proto \
 xrandr \
-zlib 
+zlib \
 )
 
 # current RocketRaid Release - See http://www.highpoint-tech.com/BIOS_Driver/R750/Linux/
