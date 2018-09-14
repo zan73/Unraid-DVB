@@ -80,6 +80,7 @@ xorgproto \
 xcb-proto \
 xrandr \
 zlib \
+zstd \
 )
 
 # current RocketRaid R750 Release - See http://www.highpoint-tech.com/BIOS_Driver/R750/Linux/
