@@ -46,19 +46,30 @@ make -j $(grep -c ^processor /proc/cpuinfo)
 cd $D/kernel
 make all modules_install install
 
-##Install RocketRaid - remove at the moment until LT give driver source code location.
-#mkdir -p /usr/src/drivers/highpoint
-#cd /usr/src/drivers/highpoint
-#wget http://www.highpoint-tech.com/BIOS_Driver/R750/Linux/R750_Linux_Src_v$ROCKET.tar.gz
-#tar xf R750_Linux_Src_v$ROCKET.tar.gz
-#echo "Build out of tree driver: RocketRaid r750"
-#( cd /usr/src/drivers/highpoint
-#  rm -rf r750-linux-src-v$ROCKETSHORT
-#  ./r750-linux-src-v$ROCKET.bin --keep --noexec --target r750-linux-src-v$ROCKETSHORT )
-#( cd /usr/src/drivers/highpoint/r750-linux-src-v$ROCKETSHORT/product/r750/linux/
-#  make KERNELDIR=$D/kernel
-#  xz -f r750.ko
-#  install -m 644 -o root -g root r750.ko.xz -D -t /lib/modules/$(uname -r)/kernel/drivers/scsi/ )
+##Install Rocketraid R750
+mkdir -p /usr/src/drivers/highpoint
+cd /usr/src/drivers/highpoint
+wget https://s3.amazonaws.com/dnld.lime-technology.com/archive/R750_Linux_Src_v1.2.11-18_06_26.tar.gz
+tar xf R750_Linux_Src_v$ROCKET.tar.gz
+echo "Build out of tree driver: RocketRaid r750"
+( cd /usr/src/drivers/highpoint
+  ./r750-linux-src-v$ROCKET.bin --keep --noexec --target r750-linux-src-v$ROCKETSHORT )
+( cd /usr/src/drivers/highpoint/r750-linux-src-v$ROCKETSHORT/product/r750/linux/
+  make KERNELDIR=$D/kernel
+  xz -f r750.ko
+  install -m 644 -o root -g root r750.ko.xz -D -t /lib/modules/$(uname -r)/kernel/drivers/scsi/ )
+
+##Install RR3740A
+cd /usr/src/drivers/highpoint
+wget https://s3.amazonaws.com/dnld.lime-technology.com/archive/RR3740A_840A_2840A_Linux_Src_v1.17.0_18_06_15.tar.gz
+tar xf RR3740A_840A_2840A_Linux_Src_v$RR.tar.gz
+echo "Build out of tree driver: RocketRaid 3740A"
+( cd /usr/src/drivers/highpoint
+  ./rr3740a_840a_2840a_linux_src_v$RR.bin --keep --noexec --target rr3740a-linux-src-v$RRSHORT )
+( cd /usr/src/drivers/highpoint/rr3740a-linux-src-v$RRSHORT/product/rr3740a/linux/
+  make KERNELDIR=$D/kernel
+  xz -f rr3740a.ko
+  install -m 644 -o root -g root rr3740a.ko.xz -D -t /lib/modules/$(uname -r)/kernel/drivers/scsi/ )
 
 ##Download Unraid
 cd $D
@@ -105,9 +116,6 @@ cd $D/$VERSION/stock/
 md5sum bzimage-new > bzimage-new.md5
 md5sum bzmodules-new > bzmodules-new.md5
 md5sum bzfirmware-new > bzfirmware-new.md5
-
-##Return to original directory
-cd $D
 
 ##Return to original directory
 cd $D
