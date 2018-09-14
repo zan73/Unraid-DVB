@@ -2,40 +2,6 @@
 
 # set our package list
 slack_package_current=(\
-autoconf \
-automake \
-bc \
-binutils \
-bison \
-cpio \
-elfutils \
-flex \
-gc \
-gcc \
-gcc-g++ \
-git \
-glibc \
-glibc-solibs \
-guile \
-kernel-headers \
-kernel-modules \
-lftp \
-libcgroup \
-libgudev \
-libmpc \
-libtool \
-libunistring \
-m4 \
-make \
-mpfr \
-ncurses \
-patch \
-perl \
-pkg-config \
-python \
-readline \
-sqlite \
-squashfs-tools \
 atk \
 cairo \
 cairomm \
@@ -80,24 +46,7 @@ xorgproto \
 xcb-proto \
 xrandr \
 zlib \
-zstd \
 )
-
-# current RocketRaid R750 Release - See http://www.highpoint-tech.com/BIOS_Driver/R750/Linux/
-ROCKET="1.2.11-18_06_26"
-
-ROCKETSHORT=$(echo $ROCKET | cut -d"-" -f1)
-
-# current RocketRaid RR3740A Release - 
-RR="1.17.0_18_06_15"
-
-RRSHORT=$(echo $RR | cut -d"-" -f1)+
-
-# current LibreELEC Release - See https://github.com/LibreELEC/dvb-firmware/releases
-LE="1.3.1"
-
-# current Digital Devices Github release - See https://github.com/DigitalDevices/dddvb/releases
-DD="0.9.36"
 
 # current Date (DDExp & TBS OS Version)
 DATE=$(date +'%d%m%y')
