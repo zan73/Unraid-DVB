@@ -12,6 +12,6 @@ wget https://raw.githubusercontent.com/CHBMB/Unraid-DVB/master/build_scripts/tbs
 wget https://raw.githubusercontent.com/CHBMB/Unraid-DVB/master/build_scripts/tbs-os-module.sh -P /tmp/dvb/
 
 #Change permissions
-chmod +x /mnt/disk1/dvb/*.sh
+chmod +x /tmp/dvb/*.sh
 
 
